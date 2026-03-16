@@ -46,6 +46,15 @@ public class listagemVIEW extends javax.swing.JFrame {
                 "ID", "Nome", "Valor", "Status"
             }
         ));
+        listaProdutos.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                listaProdutosAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane1.setViewportView(listaProdutos);
 
         jLabel1.setFont(new java.awt.Font("Lucida Fax", 0, 18)); // NOI18N
@@ -145,6 +154,10 @@ public class listagemVIEW extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
+    private void listaProdutosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_listaProdutosAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaProdutosAncestorAdded
+
     /**
      * @param args the command line arguments
      */
@@ -193,6 +206,7 @@ public class listagemVIEW extends javax.swing.JFrame {
     private javax.swing.JTable listaProdutos;
     // End of variables declaration//GEN-END:variables
 
+    // Método responsável por listar os produtos na tabela
     private void listarProdutos(){
         try {
             ProdutosDAO produtosdao = new ProdutosDAO();
